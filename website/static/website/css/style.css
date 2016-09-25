@@ -1,0 +1,134 @@
+
+.logo {
+   height: 40px;
+   margin-top: -10px;
+   -webkit-transition: -webkit-transform .8s ease-in-out;
+   transition: transform .8s ease-in-out;
+}
+.logo:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+
+}
+.navbar-brand a {
+    color:#000;
+}
+.navbar {
+    background-color: #ffbaba;
+    border-color: #ff8787;
+}
+
+.alert-danger {
+    background-color: #f86969;
+
+}
+.btn-primary{
+    background-color: #f86969 !important;
+    border-color: #dd4343 !important;
+}
+
+.btn-primary:hover {
+   background-color: #f86969 !important;
+    border-color: #dd4343 !important;
+}   
+
+.btn-primary:active, .btn-primary:checked {
+    background-color: #d25454 !important;
+    border-color: #dd4343 !important;
+}
+
+body {
+    background-color:#f9f1f1;
+}
+
+#refresh {
+    
+}
+
+menu {
+    margin-bottom: 50px;
+}
+
+main {
+    padding: 50px;
+}
+
+.modal-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+main section, main aside {
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+#fakeUpload, #goBack {
+    margin-top: 20px;
+}
+
+aside span {
+    height: 23px !important;
+    margin-bottom: 10px;
+}
+
+#clickToDownload {
+    display: none;
+}
+
+a:hover + #clickToDownload {
+    margin-top: -50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 200%;
+    display: block;
+}
+
+#clickToDownload span {
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#gallery img {
+    margin-bottom: 20px;
+    border: solid #ff8787 1px;
+    padding: 0;
+}
+
+#gallery a .badge {
+    position: relative;
+    margin-top: -90px;
+    margin-right: 3px;
+    z-index: 1 !important;
+}
+
+.ad {
+    margin-bottom: 0;
+}
+
+
+#chat iframe{ 
+    min-height: 60vh;
+}
+
+#webcam {
+    height: 400px;
+    overflow: hidden;
+    padding:0;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border: solid #ff8787 1px;
+}
+
+.picture {
+    max-height: 500px;
+}
+
+h2.title {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow:ellipsis;
+}

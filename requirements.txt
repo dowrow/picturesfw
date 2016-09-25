@@ -1,0 +1,14 @@
+dj-database-url==0.4.1
+Django==1.9.5
+django-appconf==1.0.2
+django-block-ip==0.2.0
+django-ipware==1.1.5
+django-watermark==0.1.8
+gunicorn==19.4.5
+ipcalc==1.99.0
+numpy==1.11.0
+Pillow==3.2.0
+psycopg2==2.6.1
+six==1.10.0
+wheel==0.24.0
+whitenoise==3.0

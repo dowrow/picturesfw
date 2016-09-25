@@ -1,0 +1,24 @@
+{% extends 'website/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Error{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="An error occurred while processing your request">
+{% endblock %}
+        
+{% block body %}
+    <header class="row text-center">
+        <h1>Opss!</h1>
+        <h3>{{ error }}</h3>
+    </header>
+    <section class="row">
+        <img class="col-md-6 col-md-offset-3 col-sm-12 img-responsive" src="{% static 'website/img/monkey.gif' %}"/>
+        <nav class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+            <a id="goBack" href="javascript:history.go(-1);" class="btn btn-primary col-md-12 col-sm-12 col-xs-12">
+                <i class="glyphicon glyphicon-arrow-left"></i> TRY AGAIN
+            </a>
+        </nav>
+    </section>
+{% endblock %}

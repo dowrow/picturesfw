@@ -1,0 +1,106 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture Swap - {% block title %}Upload a picture to discover what the last visitor
+        uploaded{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="juicyads-site-verification" content="57d67888cce2c5df8430ce2e86ba9345">
+    <meta name="google-site-verification" content="HNsgoFML7W-X4MJ_lPkFwJ_FUqu2os-uiGmft8DZpsg" />
+    {% block meta %}{% endblock %}
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="{% static 'website/css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="//afeld.github.io/emoji-css/emoji.css">
+    {% block stylesheets %}{% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{% static 'website/favicon.ico' %}"/>
+
+    <link rel="canonical" href="https://www.pictureswap.org{{ request.path }}">
+
+</head>
+<body>
+<!-- Main menu -->
+<menu>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <a href="/">
+                        <img alt="PictureSwap.org" class="logo" src="{% static 'website/img/logo.png' %}"/>
+                    </a>
+                </div>
+
+                <!-- Hamburger menu (only mobile)-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Options -->
+            <div id="options" class="collapse navbar-collapse">
+
+                <!-- Right -->
+                <div class="navbar-right">
+
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <script src="{% static 'website/js/users.js' %}"></script>
+                            <a href="http://www.usuarios-online.com/en/" data-id="86390571a186c14988c040081fe1e400" data-type="default" target="_blank" id="uox_link"></a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                            <a href="{% url 'index' %}"><span class="glyphicon glyphicon-transfer"
+                                                              aria-hidden="true"></span> Swap Pictures</a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+                            <a href="{% url 'gallery' %}"><span class="glyphicon glyphicon-picture"
+                                                              aria-hidden="true"></span> Gallery</a>
+                        </li>
+                        <li class="{% if request.resolver_match.url_name == 'rules' %}active{% endif %}">
+                            <a href="{% url 'rules' %}"><span class="glyphicon glyphicon-list-alt"
+                                                              aria-hidden="true"></span> Read the Rules</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</menu>
+
+<main class="container-fluid">
+
+    {% include "website/ad.html" %}
+
+    {% block body %}{% endblock %}
+
+    <aside class="row text-center">
+        <h3>Spread the ♥</h3>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+        <span></span>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.pictureswap.org&layout=button_count&size=small&mobile_iframe=true&appId=1468034890110746&width=91&height=20" width="91" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </aside>
+
+    {% include "website/ad.html" %}
+
+</main>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="{% static 'website/js/mouseflow.js' %}"></script>
+<script src="{% static 'website/js/ga.js' %}"></script>
+<script src="{% static 'website/js/widgets.js' %}"></script>
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

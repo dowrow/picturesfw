@@ -1,0 +1,1 @@
+web: gunicorn pictureswap.wsgi --log-file -

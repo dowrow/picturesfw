@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Great!{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Here's what the last visitor uploaded">
+{% endblock %}
+
+{% block body %}
+    <header class="row text-center">
+        <h1>Here's what the last visitor uploaded</h1>
+        <h2>{{ title }}</h2>
+    </header>
+
+    <section class="row">
+        
+        <div class="picture">
+
+            <a href="{{ picture }}" download="pictureswap.png">
+                <img class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 img-responsive" src="{{ picture }}"/>
+            </a>
+
+            <div id="clickToDownload" class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 hidden-xs hidden-sm">
+                <span class="col-md-12 col-sm-12 col-xs-12 hidden-xs hidden-sm text-center">CLICK TO DOWNLOAD <i class="glyphicon glyphicon-download"></i></span>
+            </div>
+
+        </div>
+        <nav class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a id="goBack" role="group" href="{% url 'index' %}" class="btn btn-block btn-primary ">
+                        <i class="glyphicon glyphicon-arrow-left"></i>  GO BACK
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a id="goBack" role="group" href="{% url 'gallery' %}" class="btn btn-block btn-primary ">
+                        <i class="glyphicon glyphicon-picture"></i>  GO TO GALLERY
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+{% endblock %}
