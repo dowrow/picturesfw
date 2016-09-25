@@ -14,31 +14,31 @@
     color:#000;
 }
 .navbar {
-    background-color: #ffbaba;
-    border-color: #ff8787;
+    background-color: #b4cff9;
+    border-color: #8eabf9;
 }
 
 .alert-danger {
-    background-color: #f86969;
+    background-color: #8eabf9;
 
 }
 .btn-primary{
-    background-color: #f86969 !important;
-    border-color: #dd4343 !important;
+    background-color: #8eabf9 !important;
+    border-color: #6e83f9 !important;
 }
 
 .btn-primary:hover {
-   background-color: #f86969 !important;
-    border-color: #dd4343 !important;
+   background-color: #8eabf9 !important;
+    border-color: #6e83f9 !important;
 }   
 
 .btn-primary:active, .btn-primary:checked {
-    background-color: #d25454 !important;
-    border-color: #dd4343 !important;
+    background-color: #6e83f9 !important;
+    border-color: #3f6af9 !important;
 }
 
 body {
-    background-color:#f9f1f1;
+    background-color: #e7eaf9;
 }
 
 #refresh {
@@ -94,7 +94,7 @@ a:hover + #clickToDownload {
 
 #gallery img {
     margin-bottom: 20px;
-    border: solid #ff8787 1px;
+    border: solid #6e83f9 1px;
     padding: 0;
 }
 
@@ -112,15 +112,6 @@ a:hover + #clickToDownload {
 
 #chat iframe{ 
     min-height: 60vh;
-}
-
-#webcam {
-    height: 400px;
-    overflow: hidden;
-    padding:0;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    border: solid #ff8787 1px;
 }
 
 .picture {
