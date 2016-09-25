@@ -11,7 +11,6 @@ from .models import Picture, Report, Laughing, Fearful, Banana
 MAX_PICTURES = 36;
 REPORT_BAN_THRESHOLD = 2;
 
-
 def index(request):
     return render(request, 'website/index.html')
 
@@ -45,10 +44,15 @@ def upload(request):
     if request.method == 'POST':
         form = UploadPictureForm(request.POST, request.FILES)
         if form.is_valid():
-            last_picture_pk = Picture.objects.order_by('-datetime')[0].pk
-            __upload_picture(request)
-            __delete_old_pictures()
-            return redirect('success', last_picture_pk=last_picture_pk)
+            try:
+                last_picture_pk = Picture.objects.order_by('-datetime')[0].pk
+                __upload_picture(request)
+                __delete_old_pictures()
+                return redirect('success', last_picture_pk=last_picture_pk)
+            except:
+                __upload_picture(request)
+                last_picture_pk = Picture.objects.order_by('-datetime')[0].pk
+                return redirect('success', last_picture_pk=last_picture_pk)
         else:
             return error(request, "Invalid image")
     else:
@@ -147,7 +151,3 @@ def banana(request):
             return HttpResponse('ok')
     except:
         return HttpResponse('error')
-
-
-def google(request):
-    return render(request, 'website/google37c1329649703458.html')

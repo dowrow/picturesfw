@@ -17,5 +17,4 @@ urlpatterns = [
     url(r'^fearful/$', views.fearful, name='fearful'),
     url(r'^banana/$', views.banana, name='banana'),
     url(r'^media/(?P<path>.*)$', staticviews.serve,name='media'),
-    url(r'^google37c1329649703458[\w.]html$', views.google, name='google'),
 ] + [url(r'^.*', views.error, name='error'),]
