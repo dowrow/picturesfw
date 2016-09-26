@@ -1,10 +1,10 @@
+import requests
 from block_ip.models import BlockIP
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from ipware.ip import get_ip
-
 from .forms import UploadPictureForm
 from .models import Picture, Report, Laughing, Fearful, Banana
 
@@ -19,6 +19,19 @@ def __upload_picture(request):
     picture = Picture(image=request.FILES['picture'], title=request.POST['title'])
     picture.uploader_ip = get_ip(request)
     picture.save()
+    if is_sensitive(picture):
+        picture.delete()
+
+
+def is_sensitive(picture):
+    response = requests.get('https://api.github.com/user', headers={
+            "X-Mashape-Key": "0sXHP6IbW2mshFHzVOJtQ6xVmwDcp1tRLhUjsn95qhByhS1dvb",
+            "Accept": "application/json"
+        })
+    if 'sensitive' in response.json() and response.json()['sensitive']:
+        return response.json()['sensitive']
+    else:
+        return False
 
 
 def __delete_old_pictures():
@@ -53,6 +66,7 @@ def upload(request):
                 __upload_picture(request)
                 last_picture_pk = Picture.objects.order_by('-datetime')[0].pk
                 return redirect('success', last_picture_pk=last_picture_pk)
+
         else:
             return error(request, "Invalid image")
     else:
